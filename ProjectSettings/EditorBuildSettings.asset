@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Kolesnik_room1.unity
+    guid: 4bd3aba846d0b5347ad8f3cbd7bcfbd2
+  - enabled: 1
+    path: Assets/Kuklin_room1.unity
+    guid: db080c592028afd40b64a6901fe6afe4
+  - enabled: 1
+    path: Assets/LearnMaterials 1/LearnScene 1.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
