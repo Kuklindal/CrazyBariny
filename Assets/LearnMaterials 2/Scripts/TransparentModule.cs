@@ -1,12 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Renderer))]
 [HelpURL("https://docs.google.com/document/d/1Cmm__cbik5J8aHAI6PPaAUmEMF3wAcNo3rpgzsYPzDM/edit?usp=sharing")]
 public class TransparentModule : MonoBehaviour
 {
-    private float changeSpeed;
+    [Header("Transparency Settings")]
+
+    [SerializeField]
+    [Tooltip("Скорость изменения прозрачности")]
+    [Min(0.1f)]
+    private float changeSpeed = 1f;
+
 
     private float defaultAlpha;
     private Material mat;
@@ -19,14 +24,19 @@ public class TransparentModule : MonoBehaviour
         toDefault = false;
     }
 
+    [ContextMenu("Активировать модуль")]
     public void ActivateModule()
     {
-        float target = toDefault ? defaultAlpha : 0;
+        float target = toDefault ? defaultAlpha : 0f;
+
         StopAllCoroutines();
-        StartCoroutine(ChangeTransparencyCoroutine(new Color(mat.color.r, mat.color.g, mat.color.b, target)));
+        StartCoroutine(ChangeTransparencyCoroutine(
+            new Color(mat.color.r, mat.color.g, mat.color.b, target)));
+
         toDefault = !toDefault;
     }
 
+    [ContextMenu("Вернуть в состояние по умолчанию")]
     public void ReturnToDefaultState()
     {
         toDefault = true;
@@ -37,12 +47,14 @@ public class TransparentModule : MonoBehaviour
     {
         Color start = mat.color;
         float t = 0;
+
         while (t < 1)
         {
             t += Time.deltaTime * changeSpeed;
             mat.color = Color.Lerp(start, target, t);
             yield return null;
         }
+
         mat.color = target;
     }
 }

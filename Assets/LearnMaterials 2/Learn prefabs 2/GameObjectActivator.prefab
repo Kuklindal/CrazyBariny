@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c7c4c049c325147a13be56904ace6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 1
   targets:
   - targetGO: {fileID: 780059477964288740}
     targetState: 0
