@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6993280254465785971}
   - component: {fileID: 6993280254465785968}
   - component: {fileID: 6993280254465785969}
-  - component: {fileID: 6993280254465785974}
+  - component: {fileID: 2935581588295637990}
+  - component: {fileID: 8734797927525449295}
   m_Layer: 0
   m_Name: ScalerModule
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6993280254465785975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.36, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6993280254465785974
+--- !u!114 &2935581588295637990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,5 +109,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c915fc50dfb8c44bc0953e62370f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScale: {x: 4, y: 4, z: 4}
+  debug: 1
+  targetScale: {x: 2, y: 2, z: 2}
   changeSpeed: 1
+--- !u!114 &8734797927525449295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993280254465785975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c7a5a56e8791ba4d8f62a532820af32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
