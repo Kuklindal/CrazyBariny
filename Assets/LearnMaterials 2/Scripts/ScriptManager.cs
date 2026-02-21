@@ -14,4 +14,11 @@ public class ScriptManager : MonoBehaviour
             script.Use();
         }
     }
+    void Start()
+    {
+        foreach (var script in scripts)
+        {
+            script.Use();
+        }
+    }
 }
