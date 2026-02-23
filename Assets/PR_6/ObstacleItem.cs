@@ -21,6 +21,8 @@ public class ObstacleItem : MonoBehaviour
 
     public void GetDamage(float value)
     {
+        Debug.Log("GetDamage called on: " + gameObject.name);
+        
         currentValue -= value;
         currentValue = Mathf.Clamp01(currentValue);
 
@@ -40,6 +42,7 @@ public class ObstacleItem : MonoBehaviour
 
     private void destroyObstacle()
     {
+        Debug.Log("Obstacle destroyed: " + gameObject.name);
         onDestroyObstacle?.Invoke();
         Destroy(gameObject);
     }

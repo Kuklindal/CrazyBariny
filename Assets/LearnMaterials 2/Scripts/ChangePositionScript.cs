@@ -9,12 +9,13 @@ public class ChangePositionScript : ParentScript
     [SerializeField] private float moveSpeed = 1f;
 
     private Coroutine moveCoroutine;
-    void Start()
-    {
-        Use();
-    }
+    //void Start()
+    //{
+    //    Use();
+    //}
     public override void Use()
     {
+        Debug.Log("USE CALLED");
         if (moveCoroutine != null)
             StopCoroutine(moveCoroutine);
 

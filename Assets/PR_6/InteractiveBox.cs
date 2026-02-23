@@ -8,21 +8,23 @@ public class InteractiveBox : MonoBehaviour
     {
         if (next == null) return;
 
-        Vector3 startPos = transform.position;
-        Vector3 endPos = next.transform.position;
+        Vector3 startPos = transform.position + Vector3.up * 0.5f;
+        Vector3 endPos = next.transform.position + Vector3.up * 0.5f;
         Vector3 direction = (endPos - startPos).normalized;
         float distance = Vector3.Distance(startPos, endPos);
 
         Debug.DrawLine(startPos, endPos, Color.green);
 
-        if (Physics.Raycast(startPos, direction, out RaycastHit hit, distance))
-        {
-            ObstacleItem obstacle = hit.collider.GetComponent<ObstacleItem>();
+        RaycastHit[] hits = Physics.RaycastAll(startPos, direction, distance);
 
-            if (obstacle != null)
-            {
-                obstacle.GetDamage(Time.deltaTime);
-            }
+        foreach (RaycastHit hit in hits)
+        {
+        ObstacleItem obstacle = hit.collider.GetComponent<ObstacleItem>();
+
+         if (obstacle != null)
+         {
+          obstacle.GetDamage(Time.deltaTime);
+         }
         }
     }
 
@@ -30,10 +32,10 @@ public class InteractiveBox : MonoBehaviour
     {
         if (box == this)
         {
-            Debug.Log("Íåëüçÿ äîáàâèòü ñàìîãî ñåáÿ êàê next");
+            Debug.Log("ÐÐµÐ»ÑŒÐ·Ñ Ð´Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ ÑÐ°Ð¼Ð¾Ð³Ð¾ ÑÐµÐ±Ñ");
             return;
         }
-
+        Debug.Log("Ð¡Ð²ÑÐ·ÑŒ ÑÐ¾Ð·Ð´Ð°Ð½Ð°: " + name + " -> " + box.name);
         next = box;
     }
 
